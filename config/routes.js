@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
     allCandies.push(tempCandies);
     tempCandies = {};
     res.status(201).json(allCandies);
-  }else{
+  } else {
     res.status(422).json({'ERROR': 'Color NOT Allowed'});
   }
 });
