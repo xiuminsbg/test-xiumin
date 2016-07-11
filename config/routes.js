@@ -44,14 +44,16 @@ router.get('/:id', (req, res) => {
 
 // CREATE
 router.post('/', (req, res) => {
-  if (req.body.color === allowedColor) {
-    tempCandies.name = req.body.name;
-    tempCandies.color = req.body.color;
-    allCandies.push(tempCandies);
-    tempCandies = {};
-    res.status(201).json(allCandies);
-  } else {
-    res.status(422).json({'ERROR': 'Color NOT Allowed'});
+  for (var i = 0; i < allowedColor.length; i++) {
+    if (req.body.color === allowedColor[i]) {
+      tempCandies.name = req.body.name;
+      tempCandies.color = req.body.color;
+      allCandies.push(tempCandies);
+      tempCandies = {};
+      res.status(201).json(allCandies);
+    } else {
+      res.status(422).json({'ERROR': 'Color NOT Allowed'});
+    }
   }
 });
 

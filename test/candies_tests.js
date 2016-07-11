@@ -60,7 +60,7 @@ describe('POST /candies', () => {
       .send({
         'id': 5,
         'name': 'lollipop',
-        'color': 'red'
+        'color': 'Red'
       }).end(done);
   });
   it('should add a new candy to the database', (done) => {
