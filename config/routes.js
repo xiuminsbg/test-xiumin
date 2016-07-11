@@ -44,7 +44,7 @@ router.get('/:id', (req, res) => {
 
 // CREATE
 router.post('/', (req, res) => {
-  if(req.body.color === allowedColor) {
+  if (req.body.color === allowedColor) {
     tempCandies.name = req.body.name;
     tempCandies.color = req.body.color;
     allCandies.push(tempCandies);
